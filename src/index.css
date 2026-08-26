@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/*
+  Design tokens for Yaadhum Oorae.
+  Tailwind v4 reads @theme directly — no tailwind.config.js needed.
+  Every color/font used across sections should pull from here,
+  not be hardcoded inline.
+*/
+@theme {
+  /* Brand colors — from your logo/banner assets */
+  --color-maroon: #510011;
+  --color-maroon-dark: #3a000c;
+  --color-green: #14cc64;
+  --color-green-dark: #0fa350;
+  --color-green-light: #4de08c;
+
+  /* Neutral surfaces */
+  --color-charcoal: #0d0f0d;
+  --color-charcoal-soft: #161816;
+  --color-offwhite: #f7f5f0;
+  --color-offwhite-warm: #efe9df;
+
+  /* Fonts — swap these for whatever you license/pull from Google Fonts */
+  --font-display: "Poppins", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-charcoal);
+  color: var(--color-offwhite);
+}
+
+.site-navbar {
+  height: 72px;
+  min-height: 72px;
+  padding-inline: clamp(24px, 6.8vw, 96px);
+}
