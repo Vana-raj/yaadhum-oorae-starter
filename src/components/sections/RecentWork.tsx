@@ -19,25 +19,23 @@ const work: WorkItem[] = [
 
 export function RecentWork() {
   return (
-    <AnimatedSection id="work" className="bg-charcoal px-6 py-20 text-offwhite md:px-16">
-      <div className="mx-auto max-w-6xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-green-light">Selected Work</p>
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-bold md:text-4xl">Our Recent Work</h2>
-          <p className="max-w-sm text-sm leading-6 text-offwhite/55">A few frames from the stories we have helped shape.</p>
-        </div>
-        <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {work.map((item) => (
-            <article key={item.title} className={`group relative aspect-[1.25] overflow-hidden rounded-lg bg-gradient-to-br ${item.tone} p-4 shadow-lg`}>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(255,255,255,0.3),transparent_25%),linear-gradient(150deg,transparent_35%,rgba(0,0,0,0.65))] transition-transform duration-500 group-hover:scale-105" />
-              <div className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full border border-white/50 text-xs transition-colors group-hover:bg-green group-hover:text-charcoal">▶</div>
-              <div className="absolute bottom-4 left-4 z-10">
-                <h3 className="font-semibold">{item.title}</h3>
-                <p className="mt-1 text-xs text-offwhite/65">{item.category}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+    <AnimatedSection id="work" className="bg-charcoal px-6 py-24 text-offwhite md:px-16">
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-green-light">Selected Work</p>
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-bold md:text-4xl">Our Recent Work</h2>
+        <p className="max-w-sm text-sm leading-6 text-offwhite/55">A few frames from the stories we have helped shape.</p>
+      </div>
+      <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {work.map((item) => (
+          <article key={item.title} className={`group relative aspect-[1.25] overflow-hidden rounded-lg bg-gradient-to-br ${item.tone} p-4 shadow-lg`}>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(255,255,255,0.3),transparent_25%),linear-gradient(150deg,transparent_35%,rgba(0,0,0,0.65))] transition-transform duration-500 group-hover:scale-105" />
+            <div className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full border border-white/50 text-xs transition-colors group-hover:bg-green group-hover:text-charcoal">▶</div>
+            <div className="absolute bottom-4 left-4 z-10">
+              <h3 className="font-semibold">{item.title}</h3>
+              <p className="mt-1 text-xs text-offwhite/65">{item.category}</p>
+            </div>
+          </article>
+        ))}
       </div>
     </AnimatedSection>
   );

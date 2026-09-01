@@ -20,20 +20,81 @@
   --color-offwhite: #f7f5f0;
   --color-offwhite-warm: #efe9df;
 
-  /* Fonts — swap these for whatever you license/pull from Google Fonts */
-  --font-display: "Poppins", "Segoe UI", sans-serif;
-  --font-body: "Inter", "Segoe UI", sans-serif;
+  /* Creato Display is used globally; keep fallbacks for systems without it installed. */
+  --font-display: "Creato Display", sans-serif;
+  --font-body: "Creato Display", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
   font-family: var(--font-body);
   background-color: var(--color-charcoal);
   color: var(--color-offwhite);
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.brand-marquee-track {
+  animation: brand-marquee 28s linear infinite;
+}
+
+.brand-marquee:hover .brand-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes brand-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-marquee-track {
+    animation: none;
+  }
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .site-navbar {
-  height: 72px;
   min-height: 72px;
-  padding-inline: clamp(24px, 6.8vw, 96px);
+  padding-inline: clamp(16px, 3vw, 96px);
+}
+
+@media (max-width: 767px) {
+  .site-navbar {
+    min-height: 64px;
+    padding-inline: 1rem;
+  }
 }
